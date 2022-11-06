@@ -12,6 +12,6 @@ public class SearchComponent extends HeaderComponent {
             .locatedBy("#fxg-search-text");
 
     public static Target SUBMIT_SEARCH = Target
-            .the("Search icon")
+            .the("Search icon submit")
             .locatedBy("#fxg-search-icon");
 }
