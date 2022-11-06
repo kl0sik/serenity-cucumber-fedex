@@ -12,6 +12,8 @@ Built on top of serenity-cucumber-starter project
 
 Clone project
 
+Open terminal
+
 To run all tests on Chrome use:
 ```cmd
 $ mvn clean verify
