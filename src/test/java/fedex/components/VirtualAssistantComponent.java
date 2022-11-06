@@ -9,7 +9,7 @@ public class VirtualAssistantComponent extends PageComponent {
             .locatedBy("//textarea");
 
     public static Target SUBMIT = Target
-            .the("Virtual Assistant input field")
+            .the("Virtual Assistant submit button")
             .locatedBy("//div[contains(@class, 'nw_UserSubmit')]");
 
     public static Target CONVERSATION = Target
