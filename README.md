@@ -6,20 +6,30 @@ Java, Serenity, Cucumber, Selenium, Maven
 
 Screenplay pattern
 
+Built on top of serenity-cucumber-starter project
+
 ## Usage
 
 Clone project
 
-To run all tests use:
+To run all tests on Chrome use:
 ```cmd
 $ mvn clean verify
 ```
 
-To run tests with specific tag use:
+To run tests on Chrome with specific tag use:
 ```cmd
 $ mvn clean verify -Dtags="tag"  -Dcucumber.options="--tags @tag"
 ```
 
+Framework has headless mode deactivated by default, to activate it set:
+```cmd
+headless.mode = false
+```
+
 ## Reports
 
-Nice html report is generated in target/serenity/index.html after execution
+Nice html report is generated after each execution in:
+```cmd
+target/serenity/index.html
+```
