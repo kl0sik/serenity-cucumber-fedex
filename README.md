@@ -26,7 +26,7 @@ $ mvn clean verify -Dtags="tag"  -Dcucumber.options="--tags @tag"
 
 Framework has headless mode deactivated by default, to activate it set:
 ```cmd
-headless.mode = false
+headless.mode = true
 ```
 
 ## Reports
