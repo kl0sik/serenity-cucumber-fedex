@@ -12,6 +12,8 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
+import java.time.Duration;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -52,7 +54,8 @@ public class SearchStepDefs {
     @Then("{actor} should see information about existing package with {string}")
     public void shouldSeeInformationAboutExistingPackage(Actor actor, String trackingNumber) {
         actor.attemptsTo(
-                Ensure.that(TrackingComponent.TRACKING_NUMBER).isDisplayed(),
+                Ensure.that(TrackingComponent.TRACKING_NUMBER
+                        .waitingForNoMoreThan(Duration.ofSeconds(5))).isDisplayed(),
                 Ensure.that(TrackingComponent.TRACKING_NUMBER).hasText(trackingNumber),
                 Ensure.that(TrackingComponent.STATUS).hasTrimmedTextContent("On Time")
         );
