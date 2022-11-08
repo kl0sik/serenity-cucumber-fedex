@@ -9,7 +9,6 @@ import fedex.tasks.TrackPackage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
@@ -27,7 +26,6 @@ public class SearchStepDefs {
 
     @Then("{actor} should see information about {string}")
     public void shouldSeeInformationAbout(Actor actor, String keyword) {
-        ListOfWebElementFacades searchResults = SearchResultsComponent.SEARCH_RESULTS.resolveAllFor(actor);
         actor.attemptsTo(
                 Ensure.that(SearchResultsComponent.SEARCH_INPUT).hasValue(keyword),
                 Ensure.thatAmongst(SearchResultsComponent.SEARCH_RESULTS)

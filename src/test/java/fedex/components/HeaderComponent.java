@@ -33,4 +33,9 @@ public class HeaderComponent extends HomePage {
             .the("Menu")
             .locatedBy(".fxg-global-nav")
             .inside(HEADER);
+
+    public static Target MENU_ITEMS = Target
+            .the("Menu Items")
+            .locatedBy(".dropdown")
+            .inside(MENU);
 }

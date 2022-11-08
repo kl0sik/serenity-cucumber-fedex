@@ -57,7 +57,9 @@ public class HomeStepDefs {
     public void shouldBeAbleToBrowseTheSiteUsingTopMenu(Actor actor) {
         actor.attemptsTo(
                 Ensure.that(HeaderComponent.MENU).isDisplayed(),
-                Ensure.that(HeaderComponent.MENU).containsElements(".dropdown")
+                Ensure.that(HeaderComponent.MENU).containsElements(".dropdown"),
+                Ensure.thatAmongst(HeaderComponent.MENU_ITEMS)
+                        .hasSize(4)
         );
     }
 
