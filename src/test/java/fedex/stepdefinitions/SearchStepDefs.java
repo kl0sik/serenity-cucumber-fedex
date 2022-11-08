@@ -54,6 +54,7 @@ public class SearchStepDefs {
     @Then("{actor} should see information about existing package with {string}")
     public void shouldSeeInformationAboutExistingPackage(Actor actor, String trackingNumber) {
         actor.attemptsTo(
+                Ensure.that(TrackingComponent.TRACKING_NUMBER).isDisplayed(),
                 Ensure.that(TrackingComponent.TRACKING_NUMBER).hasText(trackingNumber),
                 Ensure.that(TrackingComponent.STATUS).hasTrimmedTextContent("On Time")
         );
