@@ -27,16 +27,14 @@ public class AccountStepDefs {
     @Then("{actor} should not be able to log in")
     public void shouldNotBeAbleToLogIn(Actor actor) {
         actor.attemptsTo(
-                Ensure.that(
-                        LogInComponent.ERROR).isDisplayed()
+                Ensure.that(LogInComponent.ERROR).isDisplayed()
         );
     }
 
     @Then("{actor} should see error message containing {string}")
     public void shouldSeeErrorMessageContaining(Actor actor, String text) {
         actor.attemptsTo(
-                Ensure.that(
-                                LogInComponent.ERROR)
+                Ensure.that(LogInComponent.ERROR)
                         .text()
                         .containsIgnoringCase(text)
         );
