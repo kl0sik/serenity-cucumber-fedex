@@ -64,6 +64,7 @@ public class SearchStepDefs {
     public void shouldBeInformedAboutNoRecordOf(Actor actor, String trackingNumber) {
         assertThat(Current.url().answeredBy(actor), containsString(trackingNumber));
         actor.attemptsTo(
+                Ensure.that(TrackingComponent.ERROR).isDisplayed(),
                 Ensure.that(TrackingComponent.ERROR)
                         .text()
                         .containsIgnoringCase("No record of this tracking number can be found at this time")

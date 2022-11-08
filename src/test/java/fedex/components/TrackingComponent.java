@@ -19,9 +19,10 @@ public class TrackingComponent extends HeaderComponent {
             .the("Error message")
             .locatedBy("//span[@class='systemErrorMessageTop']");
 
-    public static Target CUSTOMER_SERVICE = ERROR
-            .find(Target.the("Customer service link")
-                    .locatedBy("a"));
+    public static Target CUSTOMER_SERVICE = Target
+            .the("Customer service link")
+            .locatedBy("a")
+            .inside(ERROR);
 
     public static Target INPUT = Target
             .the("Tracking input field")

@@ -12,11 +12,25 @@ public class HeaderComponent extends HomePage {
             .the("Log In link")
             .locatedBy("//a[@title='Log In']");
 
-    public static Target BUTTON_WITH_LABEL = Target
-            .the("{0} button")
+    public static Target LINK_WITH_LABEL = Target
+            .the("{0} link")
             .locatedBy("//a[@aria-label='{0}']");
 
-    public static Target SUPPORT = BUTTON_WITH_LABEL.of("Support");
+    public static Target SUPPORT = LINK_WITH_LABEL.of("Support");
 
-    public static Target CONTACT_US = BUTTON_WITH_LABEL.of("Contact Us");
+    public static Target CONTACT_US = LINK_WITH_LABEL.of("Contact Us");
+
+    public static Target HEADER = Target
+            .the("Header")
+            .locatedBy("//nav");
+
+    public static Target LOGO = Target
+            .the("FedEx logo")
+            .locatedBy("//img")
+            .inside(HEADER);
+
+    public static Target MENU = Target
+            .the("Menu")
+            .locatedBy(".fxg-global-nav")
+            .inside(HEADER);
 }
